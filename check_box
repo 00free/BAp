@@ -1,0 +1,144 @@
+
+		@Override
+	         public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+				
+				View rootView = inflater.inflate(R.layout.fragment_section_detail,
+						container, false);
+				
+				((TextView) rootView.findViewById(R.id.section_detail)).setText("Example");
+			    
+				((TextView) rootView.findViewById(R.id.intro)).setText("Example");
+			     
+				final boolean flags[] = new boolean[] {false, false, false, false}; 
+
+				final CheckBox box_1 = (CheckBox) rootView.findViewById(R.id.choice_a);
+				box_1.setText(option_a);
+				final CheckBox box_2 = (CheckBox) rootView.findViewById(R.id.choice_b);
+				box_2.setText(option_b);
+				final CheckBox box_3 = (CheckBox) rootView.findViewById(R.id.choice_c);
+				box_3.setText(option_c);
+				final CheckBox box_4 = (CheckBox) rootView.findViewById(R.id.choice_d);
+				box_4.setText(option_d);
+				
+				box_1.setOnCheckedChangeListener(new OnCheckedChangeListener(){
+
+					@Override
+					public void onCheckedChanged(CompoundButton buttonView,
+							boolean isChecked) {
+						
+						if(flags[0]==false){
+							flags[0]=true;
+							Toast.makeText(getActivity(), "Now Checked", Toast.LENGTH_LONG).show();
+							if(
+							box_2.isChecked()){
+								box_2.setChecked(false);
+							}if(
+							box_3.isChecked()){
+								box_3.setChecked(false);
+							}if(
+							box_4.isChecked()){
+								box_4.setChecked(false);
+							}
+						}else{
+							
+							flags[0]=false;
+							Toast.makeText(getActivity(), "Now unChecked", Toast.LENGTH_LONG).show();
+	
+						}
+						
+						// TODO Auto-generated method stub
+					
+
+						
+					}});
+				box_2.setOnCheckedChangeListener(new OnCheckedChangeListener(){
+
+					@Override
+					public void onCheckedChanged(CompoundButton buttonView,
+							boolean isChecked) {
+						// TODO Auto-generated method stub
+						
+						if(flags[1]==false){
+							flags[1]=true;
+							Toast.makeText(getActivity(), "Now Checked", Toast.LENGTH_LONG).show();
+							if(
+							box_1.isChecked()){
+								box_1.setChecked(false);
+							}if(
+							box_3.isChecked()){
+								box_3.setChecked(false);
+							}if(
+							box_4.isChecked()){
+								box_4.setChecked(false);
+							}
+						}else{
+							
+							flags[1]=false;
+							Toast.makeText(getActivity(), "Now unChecked", Toast.LENGTH_LONG).show();
+	
+						}
+
+						
+					}});
+				box_3.setOnCheckedChangeListener(new OnCheckedChangeListener(){
+
+					@Override
+					public void onCheckedChanged(CompoundButton buttonView,
+							boolean isChecked) {
+						// TODO Auto-generated method stub
+						
+						if(flags[2]==false){
+							flags[2]=true;
+							Toast.makeText(getActivity(), "Now Checked", Toast.LENGTH_LONG).show();
+							if(
+							box_1.isChecked()){
+								box_1.setChecked(false);
+							}if(
+							box_2.isChecked()){
+								box_2.setChecked(false);
+							}if(
+							box_4.isChecked()){
+								box_4.setChecked(false);
+							}
+						}else{
+							
+							flags[2]=false;
+							Toast.makeText(getActivity(), "Now unChecked", Toast.LENGTH_LONG).show();
+	
+						}
+
+					}});
+				box_4.setOnCheckedChangeListener(new OnCheckedChangeListener(){
+
+					@Override
+					public void onCheckedChanged(CompoundButton buttonView,
+							boolean isChecked) {
+						// TODO Auto-generated method stub
+
+						if(flags[3]==false){
+							flags[3]=true;
+							Toast.makeText(getActivity(), "Now Checked", Toast.LENGTH_LONG).show();
+
+							if(
+							box_1.isChecked()){
+								box_1.setChecked(false);
+							}if(
+							box_2.isChecked()){
+								box_2.setChecked(false);
+							}if(
+							box_3.isChecked()){
+								box_3.setChecked(false);
+							}
+						}else{
+							flags[3]=false;
+							Toast.makeText(getActivity(), "Now unChecked", Toast.LENGTH_LONG).show();
+
+						}
+					
+						
+					}});
+			    
+			    return rootView;
+			    
+				}
